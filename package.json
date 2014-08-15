@@ -1,0 +1,21 @@
+{
+  "name": "pgraph",
+  "version": "0.0.1-pre",
+  "description": "A persistent graph library",
+  "author": "Chris Pettitt <cpettitt@gmail.com>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cpettitt/pgraph.git"
+  },
+  "license": "BSD",
+  "dependencies": {
+    "browserify": "^5.10.0",
+    "chai": "^1.9.1",
+    "istanbul": "^0.3.0",
+    "jscs": "^1.5.9",
+    "jshint": "^2.5.3",
+    "mocha": "^1.21.4",
+    "uglify-js": "^2.4.15"
+  }
+}

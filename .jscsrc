@@ -1,0 +1,6 @@
+{
+  "preset": "google",
+  "disallowSpaceAfterPrefixUnaryOperators": true,
+  "maximumLineLength": 100,
+  "validateQuoteMarks": true
+}
