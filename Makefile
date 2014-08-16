@@ -15,9 +15,12 @@ SRC_FILES = index.js lib/version.js $(shell find lib -type f -name '*.js')
 TEST_FILES = $(shell find test -type f -name '*.js')
 BUILD_FILES = $(addprefix $(BUILD_DIR)/, $(MOD).js $(MOD).min.js)
 
-.PHONY: all clean
+.PHONY: all bench clean
 
 all: $(BUILD_FILES)
+
+bench: all
+	src/bench.js
 
 lib/version.js: package.json
 	src/version.js > $@

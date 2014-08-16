@@ -18,5 +18,8 @@
     "jshint": "^2.5.3",
     "mocha": "^1.21.4",
     "uglify-js": "^2.4.15"
+  },
+  "devDependencies": {
+    "benchmark": "^1.0.0"
   }
 }

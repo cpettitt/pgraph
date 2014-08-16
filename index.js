@@ -28,5 +28,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 module.exports = {
-  version: require('./lib/version')
+  Digraph: require("./lib/digraph"),
+  version: require("./lib/version")
 };
