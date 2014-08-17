@@ -129,6 +129,16 @@ describe("Digraph", function() {
       expect(g2.has("n1")).to.be.false;
     });
 
+    it("deletes edges incident on the node", function() {
+      var g = empty
+                .set("n1")
+                .setEdge("n1","n2")
+                .setEdge("n2", "n1")
+                .delete("n1");
+      expect(g.edges()).to.eql([]);
+      expect(g.numEdges()).to.equal(0);
+    });
+
     it("does nothing if 'n1' is not in the graph", function() {
       var g = empty.delete("n1");
       expect(g).to.eql(empty);
@@ -159,7 +169,6 @@ describe("Digraph", function() {
     });
 
     it("adds the edge to edges()", function() {
-      console.log(g.edges());
       expect(g.edges()).to.eql([{ v: "n1", w: "n2", lab: "label" }]);
     });
 
