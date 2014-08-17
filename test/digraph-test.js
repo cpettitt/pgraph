@@ -1,7 +1,4 @@
-var expect = require("./chai").expect,
-    Immutable = require("immutable"),
-    Map = Immutable.Map,
-    Vector = Immutable.Vector;
+var expect = require("./chai").expect;
 
 var Digraph = require("../lib/digraph");
 
@@ -62,7 +59,7 @@ describe("Digraph", function() {
     });
 
     it("adds 'n1' to the output of nodeIds()", function() {
-      expect(g.nodeIds()).to.eql(new Vector("n1"));
+      expect(g.nodeIds()).to.eql(["n1"]);
     });
 
     it("sets get('n1') = 'label'", function() {
@@ -139,7 +136,7 @@ describe("Digraph", function() {
 
     it("does not change the original graph", function() {
       expect(g1.numNodes()).to.equal(1);
-      expect(g1.nodeIds()).to.eql(new Vector("n1"));
+      expect(g1.nodeIds()).to.eql(["n1"]);
     });
   });
 
@@ -162,7 +159,8 @@ describe("Digraph", function() {
     });
 
     it("adds the edge to edges()", function() {
-      expect(g.edges()).to.eql(new Vector(new Map({ v: "n1", w: "n2", lab: "label" })));
+      console.log(g.edges());
+      expect(g.edges()).to.eql([{ v: "n1", w: "n2", lab: "label" }]);
     });
 
     it("adds the nodes to the graph if they are not already members", function() {

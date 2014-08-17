@@ -24,7 +24,8 @@ suite.on("error", function(event) {
 
 var Digraph = require("..").Digraph;
 
-var EDGE_DENSITY = 0.2,
+var NODE_SIZES = [10, 100, 1000],
+    EDGE_DENSITY = 0.2,
     KEY_SIZE = 10;
 
 function keys(count) {
@@ -63,12 +64,12 @@ suite.add("constructor", function() {
   new Digraph();
 });
 
-[10, 100, 1000].forEach(function(size) {
+NODE_SIZES.forEach(function(size) {
   var g = buildGraph(size, EDGE_DENSITY),
       nodeIds = g.nodeIds(),
-      node = nodeIds.get(Math.floor(Math.random() * nodeIds.length)),
+      node = nodeIds[Math.floor(Math.random() * nodeIds.length)],
       edges = g.edges(),
-      edge = edges.get(Math.floor(Math.random() * edges.length));
+      edge = edges[Math.floor(Math.random() * edges.length)];
 
   suite.add("set(" + size + "," + EDGE_DENSITY + ")", function() {
     g.set("mykey", "label");
@@ -87,7 +88,7 @@ suite.add("constructor", function() {
   });
 
   suite.add("getEdge(" + size + "," + EDGE_DENSITY + ")", function() {
-    g.getEdge(edge.get("v"), edge.get("w"));
+    g.getEdge(edge.v, edge.w);
   });
 
   suite.add("deleteEdge(" + size + "," + EDGE_DENSITY + ")", function() {
