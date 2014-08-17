@@ -10,10 +10,6 @@ describe("Digraph", function() {
   });
 
   describe("new Digraph()", function() {
-    it("equals Digraph.empty", function() {
-      expect(empty).to.eql(Digraph.empty());
-    });
-
     it("is empty", function() {
       expect(empty.isEmpty()).to.be.true;
     });
@@ -233,7 +229,7 @@ describe("Digraph", function() {
     });
   });
 
-  describe("delete('n1', 'n2')", function() {
+  describe("deleteEdge('n1', 'n2')", function() {
     var g1, g2;
 
     beforeEach(function() {
