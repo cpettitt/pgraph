@@ -20,6 +20,7 @@
     "uglify-js": "^2.4.15"
   },
   "devDependencies": {
-    "benchmark": "^1.0.0"
+    "benchmark": "^1.0.0",
+    "sprintf": "^0.1.4"
   }
 }
